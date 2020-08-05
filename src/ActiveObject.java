@@ -7,9 +7,6 @@
  * author:petar
  */
 
-
-
-
 public class ActiveObject {
 
 
