@@ -1,5 +1,12 @@
 package threadLocal;
 
+
+/**
+ * Model class for userName
+ * methods:
+ * getUserName()->returns useranme;
+ */
+
 public class Context {
 
     private String userName;

@@ -21,6 +21,9 @@ public class App {
 
     public static void main(String[] arags) throws InterruptedException {
 
+        /**
+         *Example of storing user data into maps
+         */
         SharedMapWithUserContext firstUser = new SharedMapWithUserContext(1);
         SharedMapWithUserContext secondUser = new SharedMapWithUserContext(2);
 
@@ -33,10 +36,24 @@ public class App {
         t1.join();
         t1.join();
 
+        System.out.println("containts key: "+SharedMapWithUserContext.userContextPerUserId.containsKey(1));
+        System.out.println("containts key: "+SharedMapWithUserContext.userContextPerUserId.get(1).getUserName());
 
+        /**
+         *Example of storing user data into ThreadLocal
+         */
+        ThreadLocalWithUserContext threadLocalWithUserContext=new ThreadLocalWithUserContext(1);
+        ThreadLocalWithUserContext threadLocalWithUserContext2=new ThreadLocalWithUserContext(2);
 
+        Thread t3= new Thread(threadLocalWithUserContext);
+        Thread t4=new Thread(threadLocalWithUserContext2);
 
+        t3.start();
+        t4.start();
 
+        t3.join();
+        t4.join();
 
+        System.out.println("Finished");
     }
 }
