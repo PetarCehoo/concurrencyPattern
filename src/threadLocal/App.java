@@ -33,7 +33,9 @@ public class App {
         t1.join();
         t1.join();
 
-
+        //
+        System.out.println("containts key: "+SharedMapWithUserContext.userContextPerUserId.containsKey(1));
+        System.out.println("containts key: "+SharedMapWithUserContext.userContextPerUserId.get(1).getUserName());
 
 
 
